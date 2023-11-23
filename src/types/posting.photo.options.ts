@@ -2,6 +2,7 @@ import { PostingLocation, PostingStoryOptions, PostingUsertags } from './posting
 
 export interface PostingPhotoOptions {
   file: Buffer;
+  fileMimeType?: string;
   caption?: string;
   usertags?: PostingUsertags;
   location?: PostingLocation;

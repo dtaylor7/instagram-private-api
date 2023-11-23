@@ -25,7 +25,7 @@ export class UploadRepository extends Repository {
       method: 'POST',
       headers: {
         X_FB_PHOTO_WATERFALL_ID: options.waterfallId || this.chance.guid(),
-        'X-Entity-Type': 'image/jpeg',
+        'X-Entity-Type': options.fileMimeType || 'image/jpeg',
         Offset: 0,
         'X-Instagram-Rupload-Params': JSON.stringify(UploadRepository.createPhotoRuploadParams(options, uploadId)),
         'X-Entity-Name': name,

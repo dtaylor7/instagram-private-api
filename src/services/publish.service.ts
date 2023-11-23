@@ -136,6 +136,7 @@ export class PublishService extends Repository {
   public async photo(options: PostingPhotoOptions) {
     const uploadedPhoto = await this.client.upload.photo({
       file: options.file,
+      fileMimeType: options.fileMimeType,
     });
     const imageSize = await sizeOf(options.file);
     const configureOptions: MediaConfigureTimelineOptions = {
